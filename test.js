@@ -18,7 +18,6 @@ var getColors = function () {
   }
 
   color = color.join('');
-  console.log(color);
   return color;
 };
 
@@ -28,7 +27,6 @@ var getGreys = function () {
   value.push(getRandomHexValue());
   value = value.join('');
   var color = '#' + value.toString() + value.toString() + value.toString();
-  console.log(color);
   return color;
 };
 
@@ -41,9 +39,9 @@ var getHexColor = function () {
   }
 };
 
-window.onkeydown = function () {
-  var bodyColor = getHexColor();
-  var headerColor = getHexColor();
+var changeView = function () {
+  var bodyColor = getAColor();
+  var headerColor = getAColor();
 
   //var footerColor = getGreys();
   document.getElementById('body').style.backgroundColor = bodyColor;
@@ -52,19 +50,25 @@ window.onkeydown = function () {
   document.getElementById('headerColor').innerHTML = headerColor;
   document.getElementById('footer').style.backgroundColor = headerColor;
   document.getElementById('footerColor').innerHTML = headerColor;
-
 };
 
-window.onmousedown = function () {
-  var bodyColor = getHexColor();
-  var headerColor = getHexColor();
+var goMonotone = false;
+var getAColor = getHexColor;
 
-  //var footerColor = getGreys();
-  document.getElementById('body').style.backgroundColor = bodyColor;
-  document.getElementById('bodyColor').innerHTML = bodyColor;
-  document.getElementById('header').style.backgroundColor = headerColor;
-  document.getElementById('headerColor').innerHTML = headerColor;
-  document.getElementById('footer').style.backgroundColor = headerColor;
-  document.getElementById('footerColor').innerHTML = headerColor;
+document.getElementById('monotone').innerHTML = 'Go Monotone';
 
+document.getElementById('monotone').onclick = function () {
+  if (goMonotone === false) {
+    goMonotone = true;
+    getAColor = getGreys;
+    document.getElementById('monotone').innerHTML = 'Go Rainbow';
+  } else {
+    goMonotone = false;
+    getAColor = getHexColor;
+    document.getElementById('monotone').innerHTML = 'Go Monotone';
+  }
+
+  changeView();
 };
+
+document.getElementById('content').onclick = changeView;
