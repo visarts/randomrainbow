@@ -1,3 +1,4 @@
+
 var hexValues = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
 
 var getRandomValue = function (num) {
@@ -39,6 +40,9 @@ var getHexColor = function () {
   }
 };
 
+var goMonotone = false;
+var getAColor = getHexColor;
+
 var changeView = function () {
   var bodyColor = getAColor();
   var headerColor = getAColor();
@@ -52,12 +56,7 @@ var changeView = function () {
   document.getElementById('footerColor').innerHTML = headerColor;
 };
 
-var goMonotone = false;
-var getAColor = getHexColor;
-
-document.getElementById('monotone').innerHTML = 'Go Monotone';
-
-document.getElementById('monotone').onclick = function () {
+var setPalette = function () {
   if (goMonotone === false) {
     goMonotone = true;
     getAColor = getGreys;
@@ -71,4 +70,10 @@ document.getElementById('monotone').onclick = function () {
   changeView();
 };
 
-document.getElementById('content').onclick = changeView;
+document.getElementById('monotone').innerHTML = 'Go Monotone';
+
+document.getElementById('monotone').onmousedown = setPalette;
+
+document.getElementById('body').onmousedown = changeView;
+
+document.getElementById('body').onkeydown = changeView;
