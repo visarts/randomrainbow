@@ -44,12 +44,27 @@ var getHexColor = function () {
 window.onkeydown = function () {
   var bodyColor = getHexColor();
   var headerColor = getHexColor();
-  var footerColor = getGreys();
+
+  //var footerColor = getGreys();
   document.getElementById('body').style.backgroundColor = bodyColor;
   document.getElementById('bodyColor').innerHTML = bodyColor;
   document.getElementById('header').style.backgroundColor = headerColor;
   document.getElementById('headerColor').innerHTML = headerColor;
-  document.getElementById('footer').style.backgroundColor = footerColor;
-  document.getElementById('footerColor').innerHTML = footerColor;
+  document.getElementById('footer').style.backgroundColor = headerColor;
+  document.getElementById('footerColor').innerHTML = headerColor;
+
+};
+
+window.onmousedown = function () {
+  var bodyColor = getHexColor();
+  var headerColor = getHexColor();
+
+  //var footerColor = getGreys();
+  document.getElementById('body').style.backgroundColor = bodyColor;
+  document.getElementById('bodyColor').innerHTML = bodyColor;
+  document.getElementById('header').style.backgroundColor = headerColor;
+  document.getElementById('headerColor').innerHTML = headerColor;
+  document.getElementById('footer').style.backgroundColor = headerColor;
+  document.getElementById('footerColor').innerHTML = headerColor;
 
 };
