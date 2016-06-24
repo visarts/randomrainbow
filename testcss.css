@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  padding: 0;
+  font: 16px sans-serif;
+  color: white;
+  transition: background-color .5s
+}
+
+#header {
+  margin: 0;
+  transition: background-color .5s
+}
+
+#title {
+  font-size: 3em;
+}
+
+#footer {
+  font-size: .8em;
+  opacity: .5;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: background-color .5s
+}
+
+.container {
+  padding: 20px;
+}
+
+.label {
+  background: white;
+  color: black;
+  border-radius: .25em;
+  padding: 5px;
+}
