@@ -3,7 +3,7 @@ body {
   padding: 0;
   font: 16px sans-serif;
   color: white;
-  transition: background-color .5s
+  transition: background-color .5s;
 }
 
 #header {
@@ -28,6 +28,11 @@ body {
 #monotone {
   font-size: 1.5em;
   padding: 1em;
+  transition: width .5s;
+}
+
+#content h2 {
+  font-weight: normal;
 }
 
 .container {
@@ -39,4 +44,5 @@ body {
   color: black;
   border-radius: .25em;
   padding: 5px;
+  font-weight: bold;
 }
