@@ -5,17 +5,23 @@
     <link rel="stylesheet" type="text/css" href="testcss.css" />
   </head>
   <body id="body">
-    <div id="header" class="container">
-      <h1 id="title">Header Color: <span id="headerColor" class="label"></span></h1>
-      <button id="monotone"></button>
+    <div id="initialized">
+      <div id="header" class="container">
+        <h1 id="title">Header Color: <span id="headerColor" class="label"></span></h1>
+        <button id="monotone"></button>
+      </div>
+      <div id="content" class="container">
+        <div>
+          The body color is <span id="bodyColor" class="label"></span>
+        </div>
+      </div>
+      <div id="footer" class="container">
+        The footer color is <span id="footerColor" class="label"></span>
+      </div>
     </div>
-    <div id="content" class="container">
-      <h2>
-        The body color is <span id="bodyColor" class="label"></span>
-      </h2>
-    </div>
-    <div id="footer" class="container">
-      The footer color is <span id="footerColor" class="label"></span>
+    <div id="uninitialized">
+      <h1 id="title">Welcome to Random Rainbow</h1>
+      <h2>Click, tap, or press any key to continue</h2>
     </div>
     <script src="test.js"></script>
   </body>

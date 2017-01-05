@@ -7,14 +7,14 @@ var getRandomValue = function (num) {
 };
 
 var getRandomHexValue = function () {
-  var randomHexValue = hexValues[getRandomValue(16)];
+  var randomHexValue = [hexValues[getRandomValue(16)], hexValues[getRandomValue(16)]];
 
-  return randomHexValue;
+  return randomHexValue.join('');
 };
 
 var getColors = function () {
   var color = ['#'];
-  for (var i = 0; i < 6; i++) {
+  for (var i = 0; i < 3; i++) {
     color.push(getRandomHexValue());
   }
 
@@ -24,7 +24,6 @@ var getColors = function () {
 
 var getGreys = function () {
   var value = [];
-  value.push(getRandomHexValue());
   value.push(getRandomHexValue());
   value = value.join('');
   var color = '#' + value.toString() + value.toString() + value.toString();
@@ -48,6 +47,8 @@ var changeView = function () {
   var headerColor = getAColor();
 
   //var footerColor = getGreys();
+  document.getElementById('uninitialized').style.display = 'none';
+  document.getElementById('initialized').style.display = 'block';
   document.getElementById('body').style.backgroundColor = bodyColor;
   document.getElementById('bodyColor').innerHTML = bodyColor;
   document.getElementById('header').style.backgroundColor = headerColor;
